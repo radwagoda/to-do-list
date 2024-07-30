@@ -1,5 +1,5 @@
 <?php
-include ("db.php");
+include ("connection.php");
 if (isset($_POST['submit'])) {
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     if ($result) {
         header("Location: read.php?msg=New record created successfully");
     } else {
-        echo "Failed: " . mysqli_error($conn);
+        echo "Failed: " . mysqli_error($con);
     }
 }
 ?>
